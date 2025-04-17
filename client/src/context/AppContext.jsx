@@ -12,6 +12,7 @@ export const AppContextProvider = ({ children }) => {
   const currency = import.meta.VITE_CURRENCY;
   const [showUserLogin, setShowUserLogin] = useState(false);
   const [products, setProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState({});
 
   const fetchProducts = async () => {
     setProducts(dummyProducts);
@@ -73,6 +74,8 @@ export const AppContextProvider = ({ children }) => {
     removeFromCart,
     cartItems,
     setCartItems,
+    searchQuery,
+    setSearchQuery,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
